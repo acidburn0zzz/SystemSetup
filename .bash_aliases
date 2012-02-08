@@ -14,11 +14,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+else
+    # I don't always use ls, but when I do, I prefer to know the file sizes and
+    # modification dates
+    alias ls='ls -lh'  
 fi
-
-# I don't always use ls, but when I do, I prefer to know the file sizes and
-# modification dates
-alias ls='ls -lh'
 
 # Other ls aliases
 alias ll='ls -alF'
