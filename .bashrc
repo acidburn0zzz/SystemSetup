@@ -3,10 +3,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# Enable coloring of directories and filenames in Mac
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -32,6 +28,10 @@ shopt -s checkwinsize
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
+
+# Enable coloring of directories and filenames in Mac
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in

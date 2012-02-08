@@ -6,9 +6,7 @@
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     
-    # I don't always use ls, but when I do, I prefer to know the file sizes and
-    # modification dates
-    alias ls='ls -lh --color=auto'
+    alias ls='ls --color=auto'
     
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
@@ -17,6 +15,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+# I don't always use ls, but when I do, I prefer to know the file sizes and
+# modification dates
+alias ls='ls -lh'
 
 # Other ls aliases
 alias ll='ls -alF'
