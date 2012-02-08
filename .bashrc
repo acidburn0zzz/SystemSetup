@@ -3,6 +3,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Enable coloring of directories and filenames in Mac
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
