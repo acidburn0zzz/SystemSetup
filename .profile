@@ -22,5 +22,19 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+# Git function
+function gup() {
+	git remote update -p
+	git merge --ff-only @{u}
+}
+
+# AWS Settings
+if [ -e "${HOME}/.setupAws" ]; then
+	. "${HOME}/.setupAws"
+fi
+
+# Default editor
+export EDITOR=vim
+
 # Jarvis message
 echo -e '\033[96mWelcome back, sir.\033[00m'

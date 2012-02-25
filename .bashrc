@@ -87,5 +87,3 @@ fi
 
 # Enable git completion
 source ~/.git-completion.sh
-
-
