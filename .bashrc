@@ -56,7 +56,7 @@ fi
 
 # Set prompt to show full working directory
 # Info: http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html
-PS1='\[\033[96m\]\w > \[\033[00m\]'
+PS1='\[\033[96m\]\h:\w > \[\033[00m\]'
 
 unset color_prompt force_color_prompt
 
