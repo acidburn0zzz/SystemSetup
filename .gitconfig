@@ -1,0 +1,22 @@
+[user]
+	name = AJ Minich
+	email = aj.minich@binatechnologies.com
+[color]
+	ui = auto
+[branch]
+	autosetupmerge = true
+[push]
+	default = tracking
+[color "branch"]
+	current = yellow bold
+	remote = cyan bold
+[color "diff"]
+	new = yellow bold
+	old = red bold
+	frag = white bold
+	meta = cyan bold
+	commit = white bold
+[color "status"]
+	added = yellow bold
+	changed = cyan bold
+	untracked = red bold
