@@ -13,7 +13,7 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+	source "$HOME/.bashrc"
     fi
 fi
 
@@ -22,15 +22,14 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# Git function
-function gup() {
-	git remote update -p
-	git merge --ff-only @{u}
-}
+# Git Settings
+if [ -e "${HOME}/.setupGit" ]; then
+    source "{HOME}/.setupGit"
+fi
 
 # AWS Settings
 if [ -e "${HOME}/.setupAws" ]; then
-	. "${HOME}/.setupAws"
+        source "${HOME}/.setupAws"
 fi
 
 # Default editor
