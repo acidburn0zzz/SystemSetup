@@ -3,8 +3,13 @@
 # Enable git completion
 source ~/.git-completion.sh
 
-function gup {
-        # An updater function so that pulls are fast-forward merged.
-        git remote update -p
-        git merge --ff-only @{u}
+# A shorter way to run git status
+function gits {
+    git status
+}
+
+# An updater function so that pulls are fast-forward merged.
+function gitup {
+    git remote update -p
+    git merge --ff-only @{u}
 }
