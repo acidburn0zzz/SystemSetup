@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Enable git completion
+source ~/.git-completion.sh
+
+function gup {
+        # An updater function so that pulls are fast-forward merged.
+        git remote update -p
+        git merge --ff-only @{u}
+}
