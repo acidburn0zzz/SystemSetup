@@ -24,7 +24,7 @@ fi
 
 # Git Settings
 if [ -e "${HOME}/.setupGit" ]; then
-    source "{HOME}/.setupGit"
+    source "${HOME}/.setupGit"
 fi
 
 # AWS Settings
