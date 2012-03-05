@@ -35,5 +35,5 @@ fi
 # Default editor
 export EDITOR=vim
 
-# Jarvis message
+# Jarvis welcome message
 echo -e '\033[96mWelcome back, sir.\033[00m'
