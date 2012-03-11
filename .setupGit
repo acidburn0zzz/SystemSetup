@@ -3,9 +3,50 @@
 # Enable git completion
 source ~/.git-completion.sh
 
-# A shorter way to run git status
+# Determines the number of commits between two different
+# git references, and returns a string containing the count
+# and colored based on the following,
+# =0 green
+# >0 red
+function get_commit_str {
+    local commit_count=$(git log --oneline "$1".."$2" | wc -l)
+
+    if [ "$commit_count" -gt "0" ] ; then
+        echo "\033[0;31m$commit_count\033[0m"
+    else
+        echo "\033[0;32m$commit_count\033[0m"
+    fi
+}
+
+# A shorter way to run git status, and with added information
 function gits {
     git status
+
+    # Get and print supplementary information
+    branch_name=$(git symbolic-ref -q HEAD)
+    branch_name=${branch_name##refs/heads/}
+    repo_name=$(git remote -v)
+
+    if [[ -n "$branch_name" ]] ; then
+        
+        remote_name=$(git config --get branch."$branch_name".remote)
+    
+        ups=$(get_commit_str "$branch_name" "$remote_name/$branch_name")
+        ums=$(get_commit_str "$remote_name/$branch_name" "$branch_name")
+    
+        commit_id=$(echo $commit_id | cut -c -12)
+    
+        # Relates the differences between the local branch.
+        # Assuming we are in the branch current,
+        #
+        # [current:+POS-NEG] this indicates that the remote branch current
+        #                    has POS commits not yet merged into the local
+        #                    branch current, and the local branch current has
+        #                    NEG commits not yet merged into the remote branch
+        #                    current.
+        echo -ne "Commit $commit_id: $ums newer on local, $ups newer on remote.\n"
+          
+    fi    
 }
 
 # An updater function so that pulls are fast-forward merged.
