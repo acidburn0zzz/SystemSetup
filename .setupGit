@@ -8,6 +8,7 @@ source ~/.git-completion.sh
 # and colored based on the following,
 # =0 green
 # >0 red
+# Written by Austin Doupnik (austind@binatechnologies.com)
 function get_commit_str {
     local commit_count=$(git log --oneline "$1".."$2" | wc -l)
 
@@ -23,6 +24,7 @@ function gits {
     git status
 
     # Get and print supplementary information
+    # Written by Austin Doupnik (austind@binatechnologies.com)
     branch_name=$(git symbolic-ref -q HEAD)
     branch_name=${branch_name##refs/heads/}
     repo_name=$(git remote -v)
