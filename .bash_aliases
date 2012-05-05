@@ -25,6 +25,10 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# I want to see what's going on when I move and copy
+alias cp='cp -v'
+alias mv='mv -v'
+
 # Create a symbolic link
 function link() {
 
