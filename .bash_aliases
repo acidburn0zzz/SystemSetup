@@ -24,3 +24,17 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# Create a symbolic link
+function link() {
+
+    if [[ ${#} -lt 2 ]]; then
+        echo "Usage: link <source> <destination>"
+        return
+    fi
+
+    link = ${1}
+    destination = ${2}
+
+    ln -s ${destination} ${link}
+}
