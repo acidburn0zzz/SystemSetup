@@ -6,7 +6,7 @@
 [branch]
 	autosetupmerge = true
 [push]
-	default = tracking
+	default = current
 [color "branch"]
 	current = yellow bold
 	remote = cyan bold
