@@ -24,3 +24,5 @@
 	user = ajminich
 [core]
 	editor = vim
+[credential]
+    helper = cache --timeout=28800
