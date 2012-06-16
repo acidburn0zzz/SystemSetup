@@ -35,10 +35,14 @@ export VISUAL=vim
 
 export PATH=$HOME/bin:$PATH
 
-if [ -f ~/.zsh_aliases ]; then
-    source ~/.zsh_aliases
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
 fi
 
-echo -e "\033[96mWelcome back to ${HOSTNAME}, sir.\033[00m"
+if [ -f ~/.profile ]; then
+    source ~/.profile
+fi
 
 source ~/etc/zshrc
+
+

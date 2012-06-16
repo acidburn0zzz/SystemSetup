@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Enable git completion
-source ~/.git-completion.sh
+#source ~/.git-completion.sh
 
 # Determines the number of commits between two different
 # git references, and returns a string containing the count
