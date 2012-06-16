@@ -31,14 +31,6 @@ setopt sharehistory
 
 set -o emacs
 
-export VISUAL=vim
-
-export PATH=$HOME/bin:$PATH
-
-if [ -f ~/.aliases ]; then
-    source ~/.aliases
-fi
-
 if [ -f ~/.profile ]; then
     source ~/.profile
 fi

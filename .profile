@@ -22,6 +22,11 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+# Aliases
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
+
 # Git Settings
 if [ -e "${HOME}/.setupGit" ]; then
     source "${HOME}/.setupGit"
@@ -34,6 +39,7 @@ fi
 
 # Default editor
 export EDITOR=vim
+export VISUAL=vim
 
 # Jarvis welcome message
 echo -e "\033[96mWelcome back to ${HOSTNAME}, sir.\033[00m"
