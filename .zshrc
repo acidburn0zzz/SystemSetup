@@ -6,17 +6,19 @@ zstyle ':completion:*:*:kill:*:*' verbose yes
 zstyle ':completion:*:*:lsof:-p:*' verbose yes
 
 zstyle ':vcs_info:*' actionformats '[%F{2}%b%F{3}|%F{1}%a%F{5}%f] '
-zstyle ':vcs_info:*' formats '[%F{2}%b%F{5}%f] '
+zstyle ':vcs_info:*' formats '%b'
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
 zstyle ':vcs_info:*' enable git svn
 
 precmd()
 {
     vcs_info
-    export PROMPT="
-${vcs_info_msg_0_}%{$fg[blue]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%} [%*] [%!] [%(?.%{$fg[green]%}.%{$fg[red]%})%?%{$reset_color%}] [%y] [%~]
-%% "
+    export PROMPT="%{$fg[cyan]%}%* %n@%m:%~ (branch: ${vcs_info_msg_0_})
+>%{$reset_color%} "
 }
+
+#
+#PS1='\[\033[96m\]\h:\w > \[\033[00m\]'
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=9999
@@ -33,17 +35,10 @@ export VISUAL=vim
 
 export PATH=$HOME/bin:$PATH
 
-eval `dircolors $HOME/.dircolors`
+if [ -f ~/.zsh_aliases ]; then
+    source ~/.zsh_aliases
+fi
 
-alias ls='ls --color=auto'
-
-case "$(hostname)" in
-    "orca")
-        export PATH=/mnt/ssd0/austind/install/bin:$PATH
-        ;;
-    "t-rex")
-        export PATH=/mnt/scratch0/austind/install/bin:$PATH
-        ;;
-esac
+echo -e "\033[96mWelcome back to ${HOSTNAME}, sir.\033[00m"
 
 source ~/etc/zshrc
