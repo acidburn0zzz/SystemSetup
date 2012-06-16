@@ -13,7 +13,7 @@ zstyle ':vcs_info:*' enable git svn
 precmd()
 {
     vcs_info
-    export PROMPT="%{$fg[cyan]%}%* %n@%m:%~ (branch: ${vcs_info_msg_0_})
+    export PROMPT="%{$fg[cyan]%}%* %n@%m:%~ (${vcs_info_msg_0_} branch)
 >%{$reset_color%} "
 }
 
