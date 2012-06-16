@@ -35,6 +35,11 @@ if [ -f ~/.profile ]; then
     source ~/.profile
 fi
 
-source ~/etc/zshrc
+if [ -f ~/etc/zshrc ]; then
+    source ~/etc/zshrc
+fi
+
+# Jarvis welcome message
+echo -e "\033[96mWelcome back to $(hostname), sir.\033[00m"
 
 

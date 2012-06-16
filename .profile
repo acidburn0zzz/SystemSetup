@@ -41,5 +41,3 @@ fi
 export EDITOR=vim
 export VISUAL=vim
 
-# Jarvis welcome message
-echo -e "\033[96mWelcome back to ${HOSTNAME}, sir.\033[00m"
