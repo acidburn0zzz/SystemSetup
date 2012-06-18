@@ -15,6 +15,8 @@ precmd()
     vcs_info
     export PROMPT="%{$fg[white]%}%* %n@%m:%~ (${vcs_info_msg_0_} branch)
 >%{$reset_color%} "
+#    export PROMPT=$'%{\e[0;96m%}%* %n@%m:%~ (${vcs_info_msg_0_} branch)
+#>%{\e[0m%} '
 }
 
 #
