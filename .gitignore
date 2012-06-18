@@ -4,15 +4,20 @@
 .setupAws
 
 # Folders in the home directory
+.bash_history
+.m2
+.s3cfg
 .vim
 .viminfo
+.zsh_history
 Documents
 Downloads
 Library
 Movies
 Music
 Pictures
-
+programs
+data
 
 # --------------------------------------------------------------
 # GLOBAL .gitignore
