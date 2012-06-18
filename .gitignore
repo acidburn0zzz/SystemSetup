@@ -3,6 +3,17 @@
 # Ignore AWS information
 .setupAws
 
+# Folders in the home directory
+.vim
+.viminfo
+Documents
+Downloads
+Library
+Movies
+Music
+Pictures
+
+
 # --------------------------------------------------------------
 # GLOBAL .gitignore
 # Rules taken from http://help.github.com/ignore-files/.
