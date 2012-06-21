@@ -3,7 +3,8 @@
 # Enable git completion
 #source ~/.git-completion.sh
 
-# A shorter way to run git status, and with added information
+# A shorter way to get an appropriate git status
+# Works best with git 1.7.5+
 function gits {
     git status -sb
 }
