@@ -13,14 +13,16 @@ zstyle ':vcs_info:*' enable git svn
 precmd()
 {
     vcs_info
-    export PROMPT="%{$fg[white]%}%* %n@%m:%~ (${vcs_info_msg_0_} branch)
+    
+    prompt="%* %n@%m:%~ "
+    
+    if [[ ${vcs_info_msg_0_} != "" ]]; then
+        prompt="${prompt} (${vcs_info_msg_0_} branch: %?)"
+    fi
+        
+    export PROMPT="%{$fg[white]%}${prompt}
 >%{$reset_color%} "
-#    export PROMPT=$'%{\e[0;96m%}%* %n@%m:%~ (${vcs_info_msg_0_} branch)
-#>%{\e[0m%} '
 }
-
-#
-#PS1='\[\033[96m\]\h:\w > \[\033[00m\]'
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=9999
@@ -30,8 +32,6 @@ setopt appendhistory
 setopt extendedhistory
 setopt histignoredups
 setopt sharehistory
-
-set -o emacs
 
 if [ -f ~/.profile ]; then
     source ~/.profile
