@@ -5,7 +5,7 @@
 
 # A shorter way to run git status, and with added information
 function gits {
-    git status -s 
+    git status -sb
 }
 
 # An updater function so that pulls are fast-forward merged.
