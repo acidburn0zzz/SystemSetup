@@ -55,15 +55,21 @@ function +vi-git-st() {
     # Are we on a remote-tracking branch?
     remote=${$(git rev-parse --verify ${hook_com[branch]}@{upstream} \
         --symbolic-full-name --abbrev-ref 2>/dev/null)}
-
+    
     if [[ -n ${remote} ]] ; then
-        ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
+        ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l | tr -d ' ')
         (( $ahead )) && gitstatus+=( "${green}+${ahead}${gray}" )
 
-        behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
+        behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l | tr -d ' ')
         (( $behind )) && gitstatus+=( "${red}-${behind}${gray}" )
 
-        hook_com[branch]="${remote} ${(j:/:)gitstatus}"
+        if 
+
+        if [ "${gitstatus}" ] ; then
+            hook_com[branch]="${remote}: ${(j:/:)gitstatus}"
+        else
+            hook_com[branch]="${remote}"
+        fi
     fi
 }
 
