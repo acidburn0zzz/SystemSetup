@@ -9,7 +9,7 @@ set hidden
 set shortmess=atI
 set cursorline
 set cursorcolumn
-set title
+set notitle
 set lazyredraw
 set scrolloff=4
 set background=dark
