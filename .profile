@@ -37,6 +37,9 @@ if [ -e "${HOME}/.setupAws" ]; then
         source "${HOME}/.setupAws"
 fi
 
+# Ports
+PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
 # Default editor
 export EDITOR=vim
 export VISUAL=vim
