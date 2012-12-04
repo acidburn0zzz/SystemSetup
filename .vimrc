@@ -1,8 +1,6 @@
 filetype plugin on
 filetype indent on
 
-runtime ftplugin/man.vim
-
 set history=10000
 set autoread
 set nocompatible
@@ -58,17 +56,9 @@ colorscheme jarvis
 
 function! RestoreCursor()
     if line ("'\"") <= line("$")
-        normal! g`"
-        return 1
+    	normal! g`"
+	return 1
     endif
-endfunction
-
-function! s:DiffWithDisk()
-    let filetype=&ft
-    diffthis
-    vnew | r # | normal! 1Gdd
-    diffthis
-    exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 
 let mapleader=","
@@ -86,39 +76,24 @@ nmap <leader>hb :ls<CR>:sb<space>
 cabbrev w!! w !sudo tee % > /dev/null
 
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkyellow',  'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['brown',       'firebrick3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['yellow',      'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+        \ ['brown',       'RoyalBlue3'],
+        \ ['darkblue',    'SeaGreen3'],
+        \ ['darkgray',    'DarkOrchid3'],
+        \ ['darkgreen',   'firebrick3'],
+        \ ['darkyellow',  'RoyalBlue3'],
+        \ ['darkred',     'SeaGreen3'],
+        \ ['brown',       'firebrick3'],
+        \ ['darkmagenta', 'DarkOrchid3'],
+        \ ['gray',        'RoyalBlue3'],
+        \ ['yellow',      'SeaGreen3'],
+        \ ['darkred',     'DarkOrchid3'],
+        \ ['darkmagenta', 'DarkOrchid3'],
+        \ ['darkblue',    'firebrick3'],
+        \ ['darkgreen',   'RoyalBlue3'],
+        \ ['darkcyan',    'SeaGreen3'],
+        \ ['red',         'firebrick3'],
+        \ ]
 
 autocmd BufWinEnter * call RestoreCursor()
-
-autocmd BufReadPre SConstruct setlocal filetype=python
-autocmd BufReadPre SConscript setlocal filetype=python
-
 autocmd BufReadPost *.java DetectIndent
 
-autocmd VimEnter * RainbowParenthesesToggle
-autocmd Syntax   * RainbowParenthesesLoadRound
-autocmd Syntax   * RainbowParenthesesLoadSquare
-autocmd Syntax   * RainbowParenthesesLoadBraces
-
-autocmd filetype cpp setlocal makeprg=scons\ -u\ .\ -j\ 24
-
-autocmd filetype java setlocal makeprg=ant
-autocmd filetype java setlocal errorformat=%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#
-
-call pathogen#infect()
