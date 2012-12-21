@@ -138,6 +138,12 @@ if [ -f ~/etc/zshrc ]; then
     source ~/etc/zshrc
 fi
 
+# Git completion setup
+
+__git_files () {
+    _wanted files expl 'local files' _files
+}
+
 # Jarvis welcome message
 echo -e "\033[96mWelcome back to $(hostname), sir.\033[00m"
 
