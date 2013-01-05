@@ -28,13 +28,13 @@ if [ -f ~/.aliases ]; then
 fi
 
 # Git Settings
-if [ -e "${HOME}/.setupGit" ]; then
-    source "${HOME}/.setupGit"
+if [ -e "${HOME}/.setup_git" ]; then
+    source "${HOME}/.setup_git"
 fi
 
 # AWS Settings
-if [ -e "${HOME}/.setupAws" ]; then
-        source "${HOME}/.setupAws"
+if [ -e "${HOME}/.setup_aws" ]; then
+        source "${HOME}/.setup_aws"
 fi
 
 # Ports
