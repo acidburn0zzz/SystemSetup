@@ -10,6 +10,7 @@ set shortmess=atI
 set cursorline
 set cursorcolumn
 set notitle
+set paste
 set lazyredraw
 set scrolloff=4
 set background=dark
@@ -49,7 +50,7 @@ set autoindent
 set smartindent
 
 set list
-set listchars=trail:∘,tab:᚛\ ,extends:᚜
+" set listchars=trail:∘,tab:᚛\ ,extends:᚜
 
 syntax enable
 colorscheme jarvis
@@ -94,6 +95,6 @@ let g:rbpt_colorpairs = [
         \ ['red',         'firebrick3'],
         \ ]
 
-autocmd BufWinEnter * call RestoreCursor()
+" autocmd BufWinEnter * call RestoreCursor()
 autocmd BufReadPost *.java DetectIndent
 
