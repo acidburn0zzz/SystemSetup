@@ -44,3 +44,5 @@ PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export EDITOR=vim
 export VISUAL=vim
 
+# Python initial imports
+export PYTHONSTARTUP=${HOME}/.pythonrc

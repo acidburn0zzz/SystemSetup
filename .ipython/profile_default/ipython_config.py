@@ -1,4 +1,5 @@
 # Configuration file for ipython.
+import os
 
 c = get_config()
 
@@ -47,7 +48,9 @@ c = get_config()
 # c.InteractiveShellApp.extra_extension = ''
 
 # List of files to run at IPython startup.
-# c.InteractiveShellApp.exec_files = []
+c.InteractiveShellApp.exec_files = [
+    os.path.expanduser("~/.pythonrc")
+]
 
 # A file to be run
 # c.InteractiveShellApp.file_to_run = ''

@@ -50,7 +50,7 @@ set autoindent
 set smartindent
 
 set list
-" set listchars=trail:∘,tab:᚛\ ,extends:᚜
+set listchars=trail:∘,tab:᚛\ ,extends:᚜
 
 syntax enable
 colorscheme jarvis
