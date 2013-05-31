@@ -38,7 +38,7 @@ if [ -e "${HOME}/.setup_aws" ]; then
 fi
 
 # Ports
-PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+PATH="${PATH}:/opt/local/bin:/opt/local/sbin"
 
 # Default editor
 export EDITOR=vim
@@ -46,3 +46,4 @@ export VISUAL=vim
 
 # Python initial imports
 export PYTHONSTARTUP=${HOME}/.pythonrc
+

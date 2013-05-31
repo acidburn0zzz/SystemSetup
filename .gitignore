@@ -22,7 +22,7 @@ Pictures
 Public
 
 programs
-data
+/data
 
 # Temporary files
 *.m~

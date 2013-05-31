@@ -203,7 +203,7 @@ c.TerminalInteractiveShell.colors = 'Linux'
 # c.TerminalInteractiveShell.prompts_pad_left = True
 
 # The part of the banner to be printed before the profile
-c.TerminalInteractiveShell.banner1 = 'Python 2.7.2 in IPython 0.13.1'
+c.TerminalInteractiveShell.banner1 = 'Python 2.7.2 in IPython 0.13.1\n'
 
 # 
 # c.TerminalInteractiveShell.readline_parse_and_bind = ['tab: complete', '"\\C-l": clear-screen', 'set show-all-if-ambiguous on', '"\\C-o": tab-insert', '"\\C-r": reverse-search-history', '"\\C-s": forward-search-history', '"\\C-p": history-search-backward', '"\\C-n": history-search-forward', '"\\e[A": history-search-backward', '"\\e[B": history-search-forward', '"\\C-k": kill-line', '"\\C-u": unix-line-discard']
