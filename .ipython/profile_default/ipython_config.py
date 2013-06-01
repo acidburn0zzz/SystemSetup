@@ -1,5 +1,7 @@
 # Configuration file for ipython.
+import IPython
 import os
+import sys
 
 c = get_config()
 
@@ -203,7 +205,7 @@ c.TerminalInteractiveShell.colors = 'Linux'
 # c.TerminalInteractiveShell.prompts_pad_left = True
 
 # The part of the banner to be printed before the profile
-c.TerminalInteractiveShell.banner1 = 'Python 2.7.2 in IPython 0.13.1\n'
+c.TerminalInteractiveShell.banner1 = "Python: %s\nIPython: %s\n" % (sys.version.split("\n")[0], IPython.__version__)
 
 # 
 # c.TerminalInteractiveShell.readline_parse_and_bind = ['tab: complete', '"\\C-l": clear-screen', 'set show-all-if-ambiguous on', '"\\C-o": tab-insert', '"\\C-r": reverse-search-history', '"\\C-s": forward-search-history', '"\\C-p": history-search-backward', '"\\C-n": history-search-forward', '"\\e[A": history-search-backward', '"\\e[B": history-search-forward', '"\\C-k": kill-line', '"\\C-u": unix-line-discard']
@@ -223,7 +225,7 @@ c.TerminalInteractiveShell.banner1 = 'Python 2.7.2 in IPython 0.13.1\n'
 # Set to confirm when you try to exit IPython with an EOF (Control-D in Unix,
 # Control-Z/Enter in Windows). By typing 'exit' or 'quit', you can force a
 # direct exit without any confirmation.
-# c.TerminalInteractiveShell.confirm_exit = True
+c.TerminalInteractiveShell.confirm_exit = False
 
 # 
 # c.TerminalInteractiveShell.ipython_dir = ''
