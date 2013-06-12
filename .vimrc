@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 filetype plugin on
 filetype indent on
 
@@ -5,6 +7,7 @@ set history=10000
 set autoread
 set nocompatible
 set ruler
+set number
 set hidden
 set shortmess=atI
 set cursorline
@@ -50,10 +53,25 @@ set autoindent
 set smartindent
 
 set list
-set listchars=trail:∘,tab:᚛\ ,extends:᚜
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 syntax enable
-colorscheme jarvis
+
+" Select appropriate color scheme for graphics
+if &t_Co >= 256 || has("gui_running")
+    colorscheme jarvis
+else
+    colorscheme noctu
+endif
+
+" Status Setup
+set statusline=
+set statusline+=%<\                       " cut at start
+set statusline+=%2*[%n%H%M%R%W]%*\        " flags and buf no
+set statusline+=%-40f\                    " path
+set statusline+=%=%1*%y%*%*\              " file type
+set statusline+=%10((%l,%c)%)\            " line and column
+set statusline+=%P                        " percentage of file
 
 function! RestoreCursor()
     if line ("'\"") <= line("$")
