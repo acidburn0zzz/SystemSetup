@@ -7,8 +7,8 @@ highlight Statement    ctermfg=75
 highlight Type         ctermfg=140
 highlight StorageClass ctermfg=140
 highlight LineNr       ctermfg=255 ctermbg=240
-highlight CursorLine               ctermbg=240 cterm=NONE
-highlight CursorColumn             ctermbg=240
+highlight CursorLine               ctermbg=235 cterm=NONE
+highlight CursorColumn             ctermbg=235
 highlight Structure    ctermfg=140
 highlight Comment      ctermfg=244
 highlight Error        ctermfg=214 ctermbg=160

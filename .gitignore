@@ -3,13 +3,27 @@
 # Ignore AWS information
 .setupAws
 
-# Folders in the home directory
+# System-specific configuration and history
 .bash_history
-.m2
+.config
 .s3cfg
-.vim
+.dropbox
+.filezilla
+.fontconfig
+.local
+.m2
+.macports
+.matlab
+.matplotlib
+.python_history
+.vim/.netrwhist
 .viminfo
 .zsh_history
+.zsh-update
+
+# Folders in home directory
+.Trash
+Applications
 Desktop
 Documents
 Downloads
