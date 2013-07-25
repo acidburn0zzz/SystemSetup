@@ -10,11 +10,14 @@
 .dropbox
 .filezilla
 .fontconfig
+.htoprc
+.kermrc
 .local
 .m2
 .macports
 .matlab
 .matplotlib
+.pylint.d
 .python_history
 .vim/.netrwhist
 .viminfo
