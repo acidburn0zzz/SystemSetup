@@ -13,9 +13,12 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	source "$HOME/.bashrc"
+        source "$HOME/.bashrc"
     fi
 fi
+
+# Brew
+PATH="/usr/local/bin:${PATH}"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
@@ -36,9 +39,6 @@ fi
 if [ -e "${HOME}/.setup_aws" ]; then
         source "${HOME}/.setup_aws"
 fi
-
-# Ports
-PATH="${PATH}:/opt/local/bin:/opt/local/sbin"
 
 # Default editor
 export EDITOR=vim
