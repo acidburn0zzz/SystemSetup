@@ -138,4 +138,5 @@ let g:rbpt_colorpairs = [
 
 " autocmd BufWinEnter * call RestoreCursor()
 autocmd BufReadPost *.java DetectIndent
+autocmd BufNewFile,BufRead *.json set ft=javascript
 

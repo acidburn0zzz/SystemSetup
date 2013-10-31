@@ -35,9 +35,9 @@ if [ -e "${HOME}/.setup_git" ]; then
     source "${HOME}/.setup_git"
 fi
 
-# AWS Settings
-if [ -e "${HOME}/.setup_aws" ]; then
-        source "${HOME}/.setup_aws"
+# Private Settings
+if [ -e "${HOME}/.setup_special" ]; then
+    source "${HOME}/.setup_special"
 fi
 
 # Default editor

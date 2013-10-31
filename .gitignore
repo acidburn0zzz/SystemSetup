@@ -1,7 +1,7 @@
 # gitignore
 
-# Ignore AWS information
-.setupAws
+# Ignore special setup
+.setup_special
 
 # System-specific configuration and history
 .bash_history
