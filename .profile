@@ -30,11 +30,6 @@ if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
 
-# Git Settings
-if [ -e "${HOME}/.setup_git" ]; then
-    source "${HOME}/.setup_git"
-fi
-
 # Private Settings
 if [ -e "${HOME}/.setup_special" ]; then
     source "${HOME}/.setup_special"

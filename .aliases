@@ -29,3 +29,15 @@ alias l='ls -CF'
 alias cp='cp -v'
 alias mv='mv -v'
 
+# A shorter way to get an appropriate git status
+# Works best with git 1.7.5+
+function gits {
+    git status -sb
+}
+
+# An updater function so that pulls are fast-forward merged.
+function gitup {
+    git remote update -p
+    git merge --ff-only @{u}
+}
+
